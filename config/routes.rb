@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :menus do
     resources :menu_items
   end
+
+  resources :json_imports, only: [:create]
 end
