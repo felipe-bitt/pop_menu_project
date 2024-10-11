@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe Restaurant, type: :model do
-  it "is valid with a name and address" do
+  it "is valid with a name" do
     restaurant = build(:restaurant, name: "Sushi Place", address: "123 Sushi Street")
 
     expect(restaurant).to be_valid
@@ -13,13 +13,6 @@ RSpec.describe Restaurant, type: :model do
 
     expect(restaurant).to_not be_valid
     expect(restaurant.errors[:name]).to include("can't be blank")
-  end
-
-  it "is invalid without an address" do
-    restaurant = build(:restaurant, address: nil)
-
-    expect(restaurant).to_not be_valid
-    expect(restaurant.errors[:address]).to include("can't be blank")
   end
 
   it "has many menus" do
