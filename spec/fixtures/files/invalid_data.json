@@ -1,0 +1,18 @@
+{
+  "restaurants": [
+    {
+      "name": "",
+      "menus": [
+        {
+          "name": "lunch",
+          "menu_items": [ 
+            {
+              "name": "",
+              "price": -5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
