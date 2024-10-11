@@ -3,7 +3,7 @@ require 'spec_helper'
 
 RSpec.describe Menu, type: :model do
   it "is valid with a name" do
-    menu = create(:menu)
+    menu = build(:menu, name: "Lunch Menu")
 
     expect(menu).to be_valid
   end
@@ -15,18 +15,27 @@ RSpec.describe Menu, type: :model do
     expect(menu.errors[:name]).to include("can't be blank")
   end
 
-  it "can have many menu items" do
-    menu = create(:menu)
-    menu_item1 = create(:menu_item, menu: menu)
-    menu_item2 = create(:menu_item, menu: menu)
+  it "belongs to a restaurant" do
+    restaurant = create(:restaurant)
+    menu = create(:menu, restaurant: restaurant)
 
-    expect(menu.menu_items).to include(menu_item1, menu_item2)
+    expect(menu.restaurant).to eq(restaurant)
   end
 
-  it "deletes associated menu items when the menu is destroyed" do
+  it "has and belongs to many menu_items" do
     menu = create(:menu)
-    create(:menu_item, menu: menu)
+    menu_item = create(:menu_item)
+    menu.menu_items << menu_item
 
-    expect { menu.destroy }.to change { MenuItem.count }.by(-1)
+    expect(menu.menu_items).to include(menu_item)
+  end
+
+  it "can have multiple menu_items" do
+    menu = create(:menu)
+    menu_items = create_list(:menu_item, 3)
+    menu.menu_items << menu_items
+
+    expect(menu.menu_items.size).to eq(3)
+    expect(menu.menu_items).to match_array(menu_items)
   end
 end
