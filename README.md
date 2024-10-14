@@ -37,3 +37,9 @@ PopMenu is a restaurant menu management system that allows importing, editing, a
 4. Run the server
    ```bash
    rails server
+
+## Tests
+
+1. Run the RSpec
+   ```bash
+   bundle exec rspec
