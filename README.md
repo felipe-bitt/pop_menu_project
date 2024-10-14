@@ -1,24 +1,36 @@
-# README
+# PopMenu - Restaurant Menu Management
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PopMenu is a restaurant menu management system that allows importing, editing, and viewing menus in a simple and intuitive way.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- **Menu Import**: Upload JSON files to import complete menus.
+- **Menu Listing**: View all registered menus.
+- **Menu Item Management**: Add, edit, and delete menu items.
 
-* System dependencies
+## Technologies Used
 
-* Configuration
+- Ruby on Rails
+- PostgreSQL
+- RSpec (for testing)
 
-* Database creation
+## Rails Version
 
-* Database initialization
+- Rails 7.1.3
 
-* How to run the test suite
+## Ruby version
 
-* Services (job queues, cache servers, search engines, etc.)
+- Ruby 3.2.2
 
-* Deployment instructions
+## Installation
 
-* ...
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/popmenu.git
+   cd popmenu
+2. Install dependencies
+   bundle install
+3. Configure database
+   rails db:create db:migrate
+4. Run the server
+   rails server
