@@ -29,8 +29,11 @@ PopMenu is a restaurant menu management system that allows importing, editing, a
    git clone https://github.com/your-username/popmenu.git
    cd popmenu
 2. Install dependencies
+   ```bash
    bundle install
 3. Configure database
+   ```bash
    rails db:create db:migrate
 4. Run the server
+   ```bash
    rails server
